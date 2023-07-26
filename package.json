@@ -2,7 +2,7 @@
   "name": "my-wallet-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://stig89.github.io/my-wallet-app/",
+  "homepage": "stig89-wallet.netlify.app",
   "type": "module",
   "scripts": {
     "dev": "vite",
