@@ -20,6 +20,7 @@ export function SendTransaction() {
   const { connectors } = useConnect();
   const [to, setTo] = useState('');
   const [amount, setAmount] = useState('');
+
   const connector = connectors[0];
 
   const { data, sendTransaction } = useSendTransaction(Config(to, amount));
@@ -42,6 +43,7 @@ export function SendTransaction() {
           onChange={e => setTo(e.target.value)}
           placeholder="0xA0Cf…251e"
           value={to}
+          disabled={isLoading || isSuccess}
         />
       </InputLabel>
       <InputLabel>
@@ -52,11 +54,23 @@ export function SendTransaction() {
           placeholder="0.05"
           value={amount}
           type="number"
+          disabled={isLoading || isSuccess}
         />
       </InputLabel>
-      <FormBtn disabled={isLoading || !sendTransaction || !to || !amount}>
-        {isLoading ? 'Sending...' : 'Send'}
-      </FormBtn>
+      {!isSuccess ? (
+        <FormBtn disabled={isLoading || !sendTransaction || !to || !amount}>
+          {isLoading ? 'Sending...' : 'Send'}
+        </FormBtn>
+      ) : (
+        <FormBtn
+          onClick={() => {
+            window.location.reload();
+          }}
+          type="button"
+        >
+          Continue
+        </FormBtn>
+      )}
       {isSuccess && (
         <div>
           Successfully sent {amount} ETH to {to}

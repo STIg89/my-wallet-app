@@ -9,6 +9,10 @@ export const FormWrap = styled.form`
   gap: 4vh;
   width: 100%;
   margin-top: 8vh;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 3vw;
+  }
 `;
 
 export const InputLabel = styled.label`

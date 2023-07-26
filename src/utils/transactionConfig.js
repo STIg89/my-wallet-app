@@ -18,7 +18,7 @@ export const Config = (to, amount) => {
         console.clear();
         return;
       }
-      Notify.failure('Form filled out incorrectly', {
+      Notify.failure('Address is not correct', {
         position: 'center-top',
       });
       console.clear();
