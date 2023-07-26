@@ -1,5 +1,4 @@
 import { useAccount, useConnect, useDisconnect, useBalance } from 'wagmi';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { ProfileWrap, Wrap } from './Profile.slyled';
 
@@ -18,12 +17,6 @@ export function Profile() {
     0,
     data?.formatted.indexOf('.') + 4
   );
-
-  if (!connector.ready) {
-    Notify.failure('Please, install the extension MetaMask', {
-      position: 'center-top',
-    });
-  }
 
   return (
     <ProfileWrap>
