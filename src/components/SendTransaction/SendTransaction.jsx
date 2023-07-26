@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   useSendTransaction,
   useWaitForTransaction,
   useAccount,
   useConnect,
-  useBalance,
 } from 'wagmi';
 import { Config } from '../../utils/transactionConfig';
 import {
