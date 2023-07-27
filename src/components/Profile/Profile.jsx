@@ -12,7 +12,9 @@ export function Profile() {
 
   const formattedAddress =
     address?.substring(0, 5) + '...' + address?.substring(address?.length - 5);
+
   const connector = connectors[0];
+
   const balance = data?.formatted.substring(
     0,
     data?.formatted.indexOf('.') + 4
